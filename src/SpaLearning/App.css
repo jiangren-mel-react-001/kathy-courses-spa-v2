@@ -1,0 +1,13 @@
+.appFrame{
+    text-decoration: none;
+    padding:0;
+    width:80%;
+    margin:0 auto;
+}
+
+.userNameText{
+    color: #bbbbbb;
+    font-size: 18px;
+    vertical-align: middle;
+    margin-top:12px;
+}
