@@ -27,22 +27,30 @@ export default class CourseEdit extends React.Component{
         });
     }
 
-    handleSubmit(){
-        this.props.history.push({pathname:'/courses',
-            state:{courseItem: this.state}});
+    handleSubmit(e){
+        e.preventDefault();
+
+        // this.props.history.push({pathname:'/courses',
+        //     state:{courseItem: this.state}});
         axios.put(`https://jr-001-pawpatrol-course-api.herokuapp.com/api/courses/${this.state.id}`, {
             name: this.state.name,
             description: this.state.description,
             image: this.state.image
         }).then(()=>{
             console.log("updated successfully");
-        this.props.history.push({pathname:"/courses",
-        state:{courseItem: this.state}});
+            this.props.history.push({pathname:"/courses",
+            state:{courseItem: this.state}});
         }) // need push history state=courseItem again....
             .catch((err)=>{
             console.log("updated failed...",err);
             throw(err);
         });
+
+
+
+
+
+
        /* this.props.history.push({pathname:'/courses',
             state:{courseItem: this.state}});*/
         console.log("in course Edit handleEdit this.props",   this.props);

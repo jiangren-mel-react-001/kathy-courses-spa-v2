@@ -82,8 +82,8 @@ export default class SpaLearning extends Component{
                             <Route path="/" exact component={Home}/>
                             <Route path="/courses" exact render={props=><CoursesContainer {...props} />}/>
                             <PrivateRoute path="/course/create" exact renderComponent={CourseCreate} token={this.state.token}/>)}/>
-                            <Route path="/course/detail/:id"  render={props =><CourseDetail {...props}/>}/>
-                            <Route path="/course/edit/:id"  render={({history,location}) => <CourseEdit history={history} location={location} />}/>
+                            <Route exact path="/course/detail/:id"  render={props =><CourseDetail {...props}/>}/>
+                            <Route exact path="/course/edit/:id"  render={({history,location}) => <CourseEdit history={history} location={location} />}/>
                             <Route path="/login" exact render={props=><Login {...props} onTokenChange={this.handleTokenChange}/>} />
 
                             <Route path="/teachers" exact render={props=><TeachersContainer {...props}/>}/>
